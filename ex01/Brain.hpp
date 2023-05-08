@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/04 14:50:59 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/04 15:09:10 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/08 14:22:58 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@ class Brain {
 	std::string	_ideas[100];
 
 	public :
-	Brain();								// default constructor
-	virtual ~Brain();						// default destructor
-	Brain(const Brain &src);				// copy constructor
+		Brain();								// default constructor
+		virtual ~Brain();						// default destructor
+		Brain(const Brain &src);				// copy constructor
+		Brain	&operator=(const Brain &src);	// '=' sign operator
 
-	Brain	&operator=(const Brain &src);		// '=' sign operator
+		void	setIdea(std::string idea);
+		const std::string	getIdea(int i);
 };
 
 #endif

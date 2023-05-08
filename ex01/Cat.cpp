@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 16:24:49 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/04 15:04:02 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/08 14:28:51 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,45 @@ void	CatMessage(std::string message) {
 
 Cat::Cat() : Animal() {
 	_type = "cat";
+	_brain = new Brain();
 	CatMessage("default constructor");
 }
 
 Cat::~Cat() {
 	CatMessage("default destructor");
+	delete _brain;
 }
 
 Cat::Cat(Cat const &src) {
 	CatMessage("copy constructor");
 	*this = src;
-	//_type = "cat";
 }
 
 Cat	&Cat::operator=(Cat const &src)
 {
-	(void)src;
 	CatMessage("'=' sign operator'");
-	//_type = "cat";
+	*_brain = *(src._brain);
 	return (*this);
 }
 
 void	Cat::makeSound(void) const {
 	CatMessage("MIAUW");
+}
+
+void	Cat::fillBrain(std::string idea) {
+	for (int i(0); i < 100; i++)
+		_brain->setIdea(idea);
+}
+
+void	Cat::setIdea(std::string idea) {
+	_brain->setIdea(idea);
+}
+
+void	Cat::getIdeas(void) {
+	std::string idea;
+	for (int i(0); i < 100; i++) {
+		idea = _brain->getIdea(i);
+		if (idea.empty() == false)
+			CatMessage(_brain->getIdea(i));
+	}
 }

@@ -6,13 +6,13 @@
 #    By: ageels <ageels@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/02 13:37:44 by ageels        #+#    #+#                  #
-#    Updated: 2023/05/04 15:29:07 by ageels        ########   odam.nl          #
+#    Updated: 2023/05/08 14:00:42 by ageels        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =  I_dont_want_to_set_the_world_on_fire
 
-FLAGS = -I. -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
+FLAGS = -I. -Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g
 
 SRC = main.cpp\
 	Animal.cpp\

@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 16:24:49 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/04 15:29:11 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/08 14:31:10 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,45 @@ void	DogMessage(std::string message) {
 
 Dog::Dog() : Animal() {
 	_type = "dog";
+	_brain = new Brain();
 	DogMessage("default constructor");
 }
 
 Dog::~Dog() {
 	DogMessage("default destructor");
+	delete _brain;
 }
 
 Dog::Dog(Dog const &src) {
 	DogMessage("copy constructor");
 	*this = src;
-	//_type = "Dog";
 }
 
 Dog	&Dog::operator=(Dog const &src)
 {
-	(void)src;
 	DogMessage("'=' sign operator'");
-	//_type = "Dog";
+	*_brain = *(src._brain);
 	return (*this);
 }
 
 void	Dog::makeSound(void) const {
 	DogMessage("WOEF");
+}
+
+void	Dog::fillBrain(std::string idea) {
+	for (int i(0); i < 100; i++)
+		_brain->setIdea(idea);
+}
+
+void	Dog::setIdea(std::string idea) {
+	_brain->setIdea(idea);
+}
+
+void	Dog::getIdeas(void) {
+	std::string idea;
+	for (int i(0); i < 100; i++) {
+		idea = _brain->getIdea(i);
+		if (idea.empty() == false)
+			DogMessage(_brain->getIdea(i));
+	}
 }
