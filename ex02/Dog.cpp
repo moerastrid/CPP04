@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 16:24:49 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/08 16:40:51 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/08 16:57:05 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	DogMessage(std::string message) {
 	std::cout << "\033[1;34m" << "Dog - " << message << "\033[0m" << std::endl;
 }
 
-Dog::Dog() : Animal() {
+Dog::Dog() : AAnimal() {
 	_type = "dog";
 	_brain = new Brain();
 	DogMessage("default constructor");

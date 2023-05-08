@@ -1,62 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Dog.cpp                                            :+:    :+:            */
+/*   Cat.cpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 16:24:49 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/08 16:40:51 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/08 16:56:54 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-void	DogMessage(std::string message) {
-	std::cout << "\033[1;34m" << "Dog - " << message << "\033[0m" << std::endl;
+void	CatMessage(std::string message) {
+	std::cout << "\033[1;33m" << "Cat - " << message << "\033[0m" << std::endl;
 }
 
-Dog::Dog() : Animal() {
-	_type = "dog";
+Cat::Cat() : AAnimal() {
+	_type = "cat";
 	_brain = new Brain();
-	DogMessage("default constructor");
+	CatMessage("default constructor");
 }
 
-Dog::~Dog() {
-	DogMessage("default destructor");
+Cat::~Cat() {
+	CatMessage("default destructor");
 	delete _brain;
 }
 
-Dog::Dog(Dog const &src) {
-	DogMessage("copy constructor");
+Cat::Cat(Cat const &src) {
+	CatMessage("copy constructor");
 	*this = src;
 }
 
-Dog	&Dog::operator=(Dog const &src)
+Cat	&Cat::operator=(Cat const &src)
 {
-	DogMessage("'=' sign operator'");
+	CatMessage("'=' sign operator'");
 	*_brain = *(src._brain);
 	return (*this);
 }
 
-void	Dog::makeSound(void) const {
-	DogMessage("WOEF");
+void	Cat::makeSound(void) const {
+	CatMessage("MIAUW");
 }
 
-void	Dog::fillBrain(std::string idea) {
+void	Cat::fillBrain(std::string idea) {
 	for (int i(0); i < 100; i++)
 		_brain->setIdea(idea);
 }
 
-void	Dog::setIdea(std::string idea) {
+void	Cat::setIdea(std::string idea) {
 	_brain->setIdea(idea);
 }
 
-void	Dog::getIdeas(void) {
+void	Cat::getIdeas(void) {
 	std::string idea;
 	for (int i(0); i < 100; i++) {
 		idea = _brain->getIdea(i);
 		if (idea.empty() == false)
-			DogMessage(_brain->getIdea(i));
+			CatMessage(_brain->getIdea(i));
 	}
 }
