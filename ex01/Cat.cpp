@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 16:24:49 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/09 13:30:45 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/09 14:51:46 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ Cat::Cat(Cat const &src) {
 Cat	&Cat::operator=(Cat const &src)
 {
 	CatMessage("'=' sign operator'");
+	_type = "cat";
 	*_brain = *(src._brain);
 	return (*this);
 }

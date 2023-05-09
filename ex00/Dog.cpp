@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 16:24:49 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/04 15:03:33 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/09 14:51:31 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,13 @@ Dog::~Dog() {
 Dog::Dog(Dog const &src) {
 	DogMessage("copy constructor");
 	*this = src;
-	//_type = "Dog";
 }
 
 Dog	&Dog::operator=(Dog const &src)
 {
 	(void)src;
 	DogMessage("'=' sign operator'");
-	//_type = "Dog";
+	_type = "Dog";
 	return (*this);
 }
 

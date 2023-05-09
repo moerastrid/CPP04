@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 16:24:49 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/09 13:30:50 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/09 14:52:00 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ Dog::Dog(Dog const &src) {
 Dog	&Dog::operator=(Dog const &src)
 {
 	DogMessage("'=' sign operator'");
+	_type = "dog";
 	*_brain = *(src._brain);
 	return (*this);
 }

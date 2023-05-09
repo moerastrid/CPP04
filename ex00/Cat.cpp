@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 16:24:49 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/04 15:03:14 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/09 14:51:25 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,13 @@ Cat::~Cat() {
 Cat::Cat(Cat const &src) {
 	CatMessage("copy constructor");
 	*this = src;
-	//_type = "cat";
 }
 
 Cat	&Cat::operator=(Cat const &src)
 {
 	(void)src;
 	CatMessage("'=' sign operator'");
-	//_type = "cat";
+	_type = "cat";
 	return (*this);
 }
 
