@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/04 14:40:52 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/08 18:02:13 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/09 13:31:23 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,11 @@ int	main(void) {
 			}
 		}
 		else
-			group[i] = new Dog;
+			try {
+				group[i] = new Dog;
+			} catch(const std::bad_alloc& ba) {
+				std::cerr << "bad_alloc caught: " << ba.what() << '\n';
+			}
 	}
 	Cat Brian;
 	Cat Greg;

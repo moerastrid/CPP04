@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 16:24:49 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/08 16:57:05 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/09 13:30:27 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ void	DogMessage(std::string message) {
 
 Dog::Dog() : AAnimal() {
 	_type = "dog";
-	_brain = new Brain();
+	try {
+		_brain = new Brain();
+	} catch(const std::bad_alloc& ba) {
+		std::cerr << "bad_alloc caught: " << ba.what() << '\n';
+	}
 	DogMessage("default constructor");
 }
 
