@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 13:36:51 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/04 14:39:03 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/09 11:51:29 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,15 @@ int main(void)
 	delete meta;
 	delete i;
 	delete j;
+
+	const WrongAnimal *wa = new WrongAnimal();
+	const WrongAnimal *wo = new WrongCat();
+
+	std::cout << wo->getType() << " " << std::endl;
+	wo->makeSound();
+	std::cout << wa->getType() << " " << std::endl;
+	wa->makeSound();
+	delete wa;
+	delete wo;
 	return (0);
 }

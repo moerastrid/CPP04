@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 16:24:49 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/04 15:03:49 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/09 11:51:08 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ WrongCat	&WrongCat::operator=(WrongCat const &src)
 	return (*this);
 }
 
-void	WrongCat::makeSound(void) {
+void	WrongCat::makeSound(void) const {
 	WrongCatMessage("WRONG MIAUW");
 }

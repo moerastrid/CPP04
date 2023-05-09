@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 13:42:39 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/02 16:46:08 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/09 11:50:51 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class WrongAnimal {
 
 		WrongAnimal	&operator=(const WrongAnimal &src);	// '=' sign operator
 
-		void		makeSound(void);
-		std::string	getType(void);
+		void		makeSound(void) const;
+		std::string	getType(void) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 14:02:09 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/04 15:03:41 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/09 11:51:15 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &src)
 	return (*this);
 }
 
-void	WrongAnimal::makeSound(void) {
+void	WrongAnimal::makeSound(void) const {
 	WrongAnimalMessage("~ wrong animal noises ~");
 }
 
-std::string	WrongAnimal::getType(void) {
+std::string	WrongAnimal::getType(void) const {
 	return (this->type);
 }

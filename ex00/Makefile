@@ -6,13 +6,19 @@
 #    By: ageels <ageels@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/02 13:37:44 by ageels        #+#    #+#                  #
-#    Updated: 2023/05/02 14:14:30 by ageels        ########   odam.nl          #
+#    Updated: 2023/05/09 11:46:12 by ageels        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Polymorphism
 
-FLAGS = -I. -Wall -Wextra -Werror -std=c++98
+FLAGS = -I. -Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g
+
+HDR =   Animal.hpp\
+        Cat.hpp\
+        Dog.hpp\
+        WrongAnimal.hpp\
+        WrongCat.hpp
 
 SRC = main.cpp\
 	Animal.cpp\
@@ -27,7 +33,7 @@ OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
+$(NAME) : $(OBJ) $(HDR)
 	c++ $(FLAGS) -o $(NAME) $(OBJ)
 
 $(OBJ_DIR) :

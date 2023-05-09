@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/02 14:17:05 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/02 16:46:15 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/09 11:50:55 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class WrongCat : public WrongAnimal {
 
 		WrongCat	&operator=(WrongCat const &src);	// '=' sign operator
 
-		void		makeSound(void);
+		void		makeSound(void) const;
 };
 
 #endif
