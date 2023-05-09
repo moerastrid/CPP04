@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/04 14:40:52 by ageels        #+#    #+#                 */
-/*   Updated: 2023/05/09 13:31:23 by ageels        ########   odam.nl         */
+/*   Updated: 2023/05/09 13:47:52 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(void) {
 	Greg.setIdea("clouds");
 	Brian.fillBrain("sleep");
 	Greg.getIdeas();
-	//Brian.getIdeas();
+	Brian.getIdeas();
 	Brian.makeSound();
 
 	for (int i(0); i < size; i++) {
